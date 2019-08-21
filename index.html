@@ -2,27 +2,36 @@
 
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="UTF-8">
-    <title>title</title>
+      <meta charset="utf-8">
+      <title></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- <link rel="apple-touch-icon" href="icon.png">
+      <!-- Place favicon.ico in the root directory -->
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/main.css">
+      <meta name="theme-color" content="#fafafa">
+    <!-- <style>
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style> -->
     <script src="js/three.min.js"></script>
     <script src="js/panolens.min.js"></script>
-
-  </head>
-  <body>
-
     <script>
-      var panorama = new PANOLENS.ImagePanorama( 'testpano2.jpg' );
-      var viewer = new PANOLENS.Viewer();
-      </script>
-    <script>
-
-
-      viewer.add( panorama );
-
+      function onLoad() {
+        var panorama = new PANOLENS.ImagePanorama( 'hqbpano3.jpg' );
+        var viewer = new PANOLENS.Viewer();
+        viewer.add( panorama );
+      }
     </script>
+  </head>
 
-
-
+  <body onload="onLoad()">
   </body>
 </html>
