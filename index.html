@@ -21,8 +21,16 @@
         padding: 0;
       }
     </style> -->
+    <link rel="stylesheet" type="text/css" href="css/loading-bar.css"/>
+    <script type="text/javascript" src="js/loading-bar.js"></script>
+
     <script src="js/three.min.js"></script>
     <script src="js/panolens.min.js"></script>
+
+  </head>
+
+  <body onload="onLoad()">
+
     <script>
       function onLoad() {
         var panorama = new PANOLENS.ImagePanorama( 'hqbpano3.jpg' );
@@ -30,8 +38,8 @@
         viewer.add( panorama );
       }
     </script>
-  </head>
 
-  <body onload="onLoad()">
+    <!-- <div class="ldBar"></div> -->
+
   </body>
 </html>
