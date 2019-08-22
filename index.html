@@ -27,16 +27,62 @@
     <script src="js/three.min.js"></script>
     <script src="js/panolens.min.js"></script>
 
+
   </head>
 
-  <body onload="onLoad()">
+  <body>
+    <div id="progress" style="width: 100%;" class="finish"></div>
+
+    <div class="panolens-infospot" style="display: none; color: rgb(255, 255, 255); top: 0px; max-width: 50%; max-height: 50%; text-shadow: rgb(0, 0, 0) 0px 0px 3px; font-family: &quot;Trebuchet MS&quot;, Helvetica, sans-serif; position: absolute;">The Where Is Bar</div>
+    <div id="desc-container" style="display: none; top: 0px; position: absolute;" class="panolens-infospot">
+      <div class="title">China's Forgotten War</div>
+      <div class="text">WWII came to the small town of Tai’erzhuang in central China – and it was never the same again. The town was strategically placed, on the north-south transport railway corridor and the ancient Grand Canal, and so was a focus of the Japanese Imperial army as it advanced. Li Jing Shan was only a child when his family fled the fighting. They returned to find their home, and most of the town, in ruins.</div>
+    </div>
 
     <script>
-      function onLoad() {
-        var panorama = new PANOLENS.ImagePanorama( 'hqbpano3.jpg' );
-        var viewer = new PANOLENS.Viewer();
-        viewer.add( panorama );
+      var infospot, infospot2, panorama, viewer, progress, progressElement;
+
+      progressElement = document.getElementById( 'progress' );
+
+
+      function onEnter ( event ) {
+
+        progressElement.style.width = 0;
+        progressElement.classList.remove( 'finish' );
+
       }
+
+      function onProgress ( event ) {
+
+        progress = event.progress.loaded / event.progress.total * 100;
+        progressElement.style.width = progress + '%';
+        if ( progress === 100 ) {
+          progressElement.classList.add( 'finish' );
+        }
+
+      }
+
+
+
+
+
+      infospot = new PANOLENS.Infospot();
+      infospot.position.set( 8000.00, -665.23, -3996.49 );
+      infospot.addHoverText( 'The Where Is Bar' );
+
+      infospot2 = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
+      infospot2.position.set( -5000.00, -1825.25, 197.56 );
+      infospot2.addHoverElement( document.getElementById( 'desc-container' ), 200 );
+
+      panorama = new PANOLENS.ImagePanorama( 'hqbpano3.jpg' );
+      panorama.addEventListener( 'progress', onProgress );
+      panorama.addEventListener( 'enter', onEnter );
+      panorama.add( infospot );
+      panorama.add( infospot2 );
+
+      viewer = new PANOLENS.Viewer();
+      viewer.add( panorama );
+
     </script>
 
     <!-- <div class="ldBar"></div> -->
