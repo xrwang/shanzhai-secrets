@@ -26,6 +26,24 @@
   <body>
     <div id="progress" style="width: 100%;" class="finish"></div>
     <div id="flickering"><h1>shanzhai secrets</h1></div>
+
+    <div id='collection-component-1567707669380'>
+    </div>
+    <div id="proclamation">
+      Here at Shanzhai Secrets we see SHOPPING as the ultimate meditation. Our mantra is:
+      SHOP NOW! SHOP NOW!
+      <br>
+      Shopping allows us to preserve our memories.
+      We have made shopping into a site of political action.
+      <br>
+      In a world of large, complex systems
+      that are so big, and ungraspable, let us reclaim agency and freedom through shopping!
+      <br>
+      Long live shanzhai! Long live shopping!
+
+      <br>
+      <marquee>SHOP NOW !!!!!! SHOP NOW</marquee>
+    </div>
     <div id="information-panel-scrolling"><marquee>WELCOME TO HUAQIANGBEI MARKET! 欢迎您到华强北电子市场!</marquee></div>
     <div class="panolens-infospot" style="display: none; color: rgb(255, 255, 255); top: 0px; max-width: 50%; max-height: 50%; text-shadow: rgb(0, 0, 0) 0px 0px 3px; font-family: &quot;Trebuchet MS&quot;, Helvetica, sans-serif; position: absolute;">TK Vase</div>
     <div id="desc-container-phone" style="display: none; top: 0px; position: absolute;" class="panolens-infospot">
@@ -85,6 +103,133 @@
       viewer.add( panorama );
 
     </script>
+
+
+
+
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'futureofmemory.myshopify.com',
+      storefrontAccessToken: '8b96c9344679f90e4741a053cc1471da',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('collection', {
+        id: '141182763111',
+        node: document.getElementById('collection-component-1567707669380'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+  "product": {
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(50% - 40px)",
+          "margin-left": "40px",
+          "margin-bottom": "50px",
+          "width": "calc(50% - 40px)"
+        },
+        "text-align": "left",
+        "img": {
+          "height": "calc(100% - 15px)",
+          "position": "absolute",
+          "left": "0",
+          "right": "0",
+          "top": "0"
+        },
+        "imgWrapper": {
+          "padding-top": "calc(75% + 15px)",
+          "position": "relative",
+          "height": "0"
+        }
+      },
+      "button": {
+        "font-weight": "bold",
+        "padding-left": "12px",
+        "padding-right": "12px"
+      }
+    },
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-40px"
+        }
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "button": false,
+      "buttonWithQuantity": true
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        "font-weight": "bold",
+        "padding-left": "12px",
+        "padding-right": "12px"
+      }
+    },
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "cart": {
+    "styles": {
+      "button": {
+        "font-weight": "bold"
+      }
+    },
+    "text": {
+      "total": "Subtotal",
+      "button": "Checkout"
+    }
+  },
+  "toggle": {
+    "styles": {
+      "toggle": {
+        "font-weight": "bold"
+      }
+    }
+  }
+},
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
 
     <!-- <div class="ldBar"></div> -->
 
