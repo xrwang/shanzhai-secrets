@@ -32,7 +32,8 @@
 
   <body>
     <div id="progress" style="width: 100%;" class="finish"></div>
-
+    <div id="flickering"><h1>shanzhai secrets</h1></div>
+    <div id="information-panel-scrolling"><marquee>WELCOME TO HUAQIANGBEI MARKET</marquee></div>
     <div class="panolens-infospot" style="display: none; color: rgb(255, 255, 255); top: 0px; max-width: 50%; max-height: 50%; text-shadow: rgb(0, 0, 0) 0px 0px 3px; font-family: &quot;Trebuchet MS&quot;, Helvetica, sans-serif; position: absolute;">TK Vase</div>
     <div id="desc-container" style="display: none; top: 0px; position: absolute;" class="panolens-infospot">
       <div class="title">TK</div>
@@ -63,9 +64,6 @@
       }
 
 
-
-
-
       infospot = new PANOLENS.Infospot();
       infospot.position.set( 5000.00, -1000.23, 300.49 );
       infospot.addHoverText( 'TK Vase' );
@@ -74,7 +72,7 @@
       infospot2.position.set( -5000.00, -1825.25, 197.56 );
       infospot2.addHoverElement( document.getElementById( 'desc-container' ), 200 );
 
-      panorama = new PANOLENS.ImagePanorama( 'hqbpano3.jpg' );
+      panorama = new PANOLENS.ImagePanorama( 'hwbpano6.jpg' );
       panorama.addEventListener( 'progress', onProgress );
       panorama.addEventListener( 'enter', onEnter );
       panorama.add( infospot );
