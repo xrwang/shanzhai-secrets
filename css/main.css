@@ -416,3 +416,12 @@ h1:focus {
   animation: flicker2 15s infinite alternate;
 
 }
+
+
+.desc-container {
+  width: 500px;
+  height: 500px;
+}
+img {
+  width: 80%;
+}

@@ -5,7 +5,7 @@
 
   <head>
       <meta charset="utf-8">
-      <title></title>
+      <title>the future of memory</title>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- <link rel="apple-touch-icon" href="icon.png">
@@ -46,13 +46,25 @@
     </div>
     <div id="information-panel-scrolling"><marquee>WELCOME TO HUAQIANGBEI MARKET! 欢迎您到华强北电子市场!</marquee></div>
     <div class="panolens-infospot" style="display: none; color: rgb(255, 255, 255); top: 0px; max-width: 50%; max-height: 50%; text-shadow: rgb(0, 0, 0) 0px 0px 3px; font-family: &quot;Trebuchet MS&quot;, Helvetica, sans-serif; position: absolute;">TK Vase</div>
-    <div id="desc-container-phone" style="display: none; top: 0px; position: absolute;" class="panolens-infospot">
+
+
+    <div class="desc-container" id="vase" style="display: none; top: 0px; position: absolute;" class="panolens-infospot">
+      <div class="title">TK vase</div>
+      <img src="vase.jpg">
+      <div class="text">TK vase text</div>
+    </div>
+
+    <div class="desc-container" id="phone" style="display: none; top: 0px; position: absolute;" class="panolens-infospot">
       <div class="title">TK Phone</div>
+      <img src="cellphone.jpg">
+
       <div class="text">TK phone text</div>
     </div>
 
-    <div id="desc-container-mahjong" style="display: none; top: 0px; position: absolute;" class="panolens-infospot">
+    <div class="desc-container" id="mahjong" style="display: none; top: 0px; position: absolute;" class="panolens-infospot">
       <div class="title">TK mahjong</div>
+      <img src="mahjong.jpg">
+
       <div class="text">TK mahjong</div>
     </div>
 
@@ -82,15 +94,15 @@
       // ? z y
       infospotVase = new PANOLENS.Infospot();
       infospotVase.position.set( 5000.00, -1000.23, 300.49 );
-      infospotVase.addHoverText( 'TK Vase' );
+      infospotVase.addHoverElement( document.getElementById( 'vase' ), 200 );
 
       infospotPhone = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
       infospotPhone.position.set( 5000.00, -1100.23, -100.49 );
-      infospotPhone.addHoverElement( document.getElementById( 'desc-container-phone' ), 200 );
+      infospotPhone.addHoverElement( document.getElementById( 'phone' ), 200 );
 
       infospotMahjong = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
       infospotMahjong.position.set( 5200.00, -1000.23, -500.49 );
-      infospotMahjong.addHoverElement( document.getElementById( 'desc-container-mahjong' ), 200 );
+      infospotMahjong.addHoverElement( document.getElementById( 'mahjong' ), 200 );
 
       panorama = new PANOLENS.ImagePanorama( 'hqbpano7.jpg' );
       panorama.addEventListener( 'progress', onProgress );
