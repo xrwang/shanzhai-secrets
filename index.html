@@ -9,18 +9,11 @@
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- <link rel="apple-touch-icon" href="icon.png">
-      <!-- Place favicon.ico in the root directory -->
+      Place favicon.ico in the root directory -->
       <link rel="stylesheet" href="css/normalize.css">
       <link rel="stylesheet" href="css/main.css">
       <meta name="theme-color" content="#fafafa">
-    <!-- <style>
-      html, body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style> -->
+
     <link rel="stylesheet" type="text/css" href="css/loading-bar.css"/>
     <script type="text/javascript" src="js/loading-bar.js"></script>
 
@@ -33,15 +26,20 @@
   <body>
     <div id="progress" style="width: 100%;" class="finish"></div>
     <div id="flickering"><h1>shanzhai secrets</h1></div>
-    <div id="information-panel-scrolling"><marquee>WELCOME TO HUAQIANGBEI MARKET</marquee></div>
+    <div id="information-panel-scrolling"><marquee>WELCOME TO HUAQIANGBEI MARKET! 欢迎您到华强电子北市场!</marquee></div>
     <div class="panolens-infospot" style="display: none; color: rgb(255, 255, 255); top: 0px; max-width: 50%; max-height: 50%; text-shadow: rgb(0, 0, 0) 0px 0px 3px; font-family: &quot;Trebuchet MS&quot;, Helvetica, sans-serif; position: absolute;">TK Vase</div>
-    <div id="desc-container" style="display: none; top: 0px; position: absolute;" class="panolens-infospot">
-      <div class="title">TK</div>
-      <div class="text">TK</div>
+    <div id="desc-container-phone" style="display: none; top: 0px; position: absolute;" class="panolens-infospot">
+      <div class="title">TK Phone</div>
+      <div class="text">TK phone text</div>
+    </div>
+
+    <div id="desc-container-mahjong" style="display: none; top: 0px; position: absolute;" class="panolens-infospot">
+      <div class="title">TK mahjong</div>
+      <div class="text">TK mahjong</div>
     </div>
 
     <script>
-      var infospot, infospot2, panorama, viewer, progress, progressElement;
+      var infospotVase, infospotPhone, infospotMahjong, panorama, viewer, progress, progressElement;
 
       progressElement = document.getElementById( 'progress' );
 
@@ -63,20 +61,25 @@
 
       }
 
+      // ? z y
+      infospotVase = new PANOLENS.Infospot();
+      infospotVase.position.set( 5000.00, -1000.23, 300.49 );
+      infospotVase.addHoverText( 'TK Vase' );
 
-      infospot = new PANOLENS.Infospot();
-      infospot.position.set( 5000.00, -1000.23, 300.49 );
-      infospot.addHoverText( 'TK Vase' );
+      infospotPhone = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
+      infospotPhone.position.set( 5000.00, -1100.23, -100.49 );
+      infospotPhone.addHoverElement( document.getElementById( 'desc-container-phone' ), 200 );
 
-      infospot2 = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
-      infospot2.position.set( -5000.00, -1825.25, 197.56 );
-      infospot2.addHoverElement( document.getElementById( 'desc-container' ), 200 );
+      infospotMahjong = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
+      infospotMahjong.position.set( 5200.00, -1000.23, -500.49 );
+      infospotMahjong.addHoverElement( document.getElementById( 'desc-container-mahjong' ), 200 );
 
-      panorama = new PANOLENS.ImagePanorama( 'hwbpano6.jpg' );
+      panorama = new PANOLENS.ImagePanorama( 'hqbpano7.jpg' );
       panorama.addEventListener( 'progress', onProgress );
       panorama.addEventListener( 'enter', onEnter );
-      panorama.add( infospot );
-      panorama.add( infospot2 );
+      panorama.add( infospotVase);
+      panorama.add( infospotPhone);
+      panorama.add( infospotMahjong );
 
       viewer = new PANOLENS.Viewer();
       viewer.add( panorama );
