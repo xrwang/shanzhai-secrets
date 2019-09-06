@@ -44,7 +44,7 @@
       <br>
       <marquee>SHOP NOW !!!!!! SHOP NOW</marquee>
     </div>
-    <div id="information-panel-scrolling"><marquee>WELCOME TO HUAQIANGBEI MARKET! 欢迎您到华强北电子市场!</marquee></div>
+    <div id="information-panel-scrolling"><marquee>WELCOME TO HUAQIANGBEI MARKET! 欢迎您到华强北电子市场! PLEASE USE YOUR MOUSE TO MOVE AROUND OUR STORE!</marquee></div>
     <div class="panolens-infospot" style="display: none; color: rgb(255, 255, 255); top: 0px; max-width: 50%; max-height: 50%; text-shadow: rgb(0, 0, 0) 0px 0px 3px; font-family: &quot;Trebuchet MS&quot;, Helvetica, sans-serif; position: absolute;">TK Vase</div>
 
     <!-- <div class="glitch" data-text="Happy Year of the Tiger">
@@ -54,24 +54,25 @@
       <div class="title">Tang Style Blue and White Porcelain Vase</div>
       <img src="vase.jpg">
       <div class="text">
-      <p>A vase that hides censored text on a traditional, blue, and white porcelain vase. This decorative style actually originates from Iraq, where craftsmen in Basra during the Abbasid caliphate (750 CE) sought to imitate imported Chinese porcelain and added their own <a href="https://web.archive.org/web/20151221085442/http://www.asia.si.edu/Shipwrecked/downloads/15Krahl.pdf" target="_blank">decorations and patterns</a>, in a form of early shanzhai. These Iraqi shanzhai pieces were then imported back to China, where Chinese craftsmen in the Tang Dynasty (907 CE) transformed this into an "iconically Chinese" type of ceramics.</p>
+      <p>A vase that hides censored text on a traditional, blue, and white porcelain vase. This decorative style actually originates from Iraq, where craftsmen in Basra during the Abbasid caliphate (750 CE) sought to imitate imported Chinese porcelain and added their own decorations and patterns, in a form of early shanzhai. These Iraqi shanzhai pieces were then imported back to China, where Chinese craftsmen in the Tang Dynasty (907 CE) transformed this into an "iconically Chinese" type of ceramics.</p>
 
       <p>On one side is the text "Let's go Hong Kong", which is a phrase that is now censored but shows support for the current 2019 Hong Kong protests. On the other side is the joke »The bun is leaking its filling,« which is a netizen joke about Xi Jinping changing the Chinese constitution to abolish term limits.</p>
       </div>
     </div>
 
     <div class="desc-container" id="phone" style="display: none; top: 0px; position: absolute;" class="panolens-infospot">
-      <div class="title">TK Phone</div>
+      <div class="title">Shanzhai Files (山寨档案)</div>
       <img src="cellphone.jpg">
-
-      <div class="text">TK phone text</div>
+      <div class="text">
+        The remaining histories we have on cellphones are stored on this Shanzhai Files Nokia as text messages, as images preloaded onto the phone, available in places like Huaqiangbei market, lost in the vast array of electronics. Maybe someone will be casually shopping and stumble across it, only to discover news images that they have never seen before, or a history that they've never read.
+      </div>
     </div>
 
     <div class="desc-container" id="mahjong" style="display: none; top: 0px; position: absolute;" class="panolens-infospot">
-      <div class="title">TK mahjong</div>
+      <div class="title">Li Ka Shing Mahjong</div>
       <img src="mahjong.jpg">
 
-      <div class="text">TK mahjong</div>
+      <div class="text">These mahjong tiles have characters from a recent ad Li Ka Shing took out in the Hong Kong newspapers, which was a veiled warning to the government that the government should act with caution, and advocated against violence, especially in its approach to protestors. That phrase is now censored on the Chinese internet. </div>
     </div>
 
     <script>
@@ -98,17 +99,22 @@
       }
 
       // ? z y
-      infospotVase = new PANOLENS.Infospot();
+      infospotVase = new PANOLENS.Infospot(300, PANOLENS.DataImage.Info);
       infospotVase.position.set( 5000.00, -1000.23, 300.49 );
       infospotVase.addHoverElement( document.getElementById( 'vase' ), 200 );
+      infospotVase.focus(20000);
 
       infospotPhone = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
       infospotPhone.position.set( 5000.00, -1100.23, -100.49 );
       infospotPhone.addHoverElement( document.getElementById( 'phone' ), 200 );
+      infospotPhone.focus(20000);
+
 
       infospotMahjong = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
       infospotMahjong.position.set( 5200.00, -1000.23, -500.49 );
       infospotMahjong.addHoverElement( document.getElementById( 'mahjong' ), 200 );
+      infospotMahjong.focus(20000);
+
 
       panorama = new PANOLENS.ImagePanorama( 'hqbpano7.jpg' );
       panorama.addEventListener( 'progress', onProgress );
