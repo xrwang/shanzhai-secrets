@@ -77,27 +77,7 @@
 
     <script>
       var infospotVase, infospotPhone, infospotMahjong, panorama, viewer;
-       // progress, progressElement;
 
-      // progressElement = document.getElementById( 'progress' );
-
-
-      // function onEnter ( event ) {
-      //
-      //   progressElement.style.width = 0;
-      //   progressElement.classList.remove( 'finish' );
-      //
-      // }
-      //
-      // function onProgress ( event ) {
-      //
-      //   progress = event.progress.loaded / event.progress.total * 100;
-      //   progressElement.style.width = progress + '%';
-      //   if ( progress === 100 ) {
-      //     progressElement.classList.add( 'finish' );
-      //   }
-      //
-      // }
 
       // ? z y
       infospotVase = new PANOLENS.Infospot(300, PANOLENS.DataImage.Info);
@@ -135,8 +115,40 @@
 
     </script>
 
+    <!--draggable-->
+    <script>
+      window.onload = function(){
 
+        draggable('proclamation');
 
+      };
+
+      var dragObj = null;
+      function draggable(id)
+      {
+        var obj = document.getElementById(id);
+        obj.style.position = "absolute";
+        obj.onmousedown = function(){
+                dragObj = obj;
+        }
+      }
+
+      document.onmouseup = function(e){
+        dragObj = null;
+      };
+
+      document.onmousemove = function(e){
+        var x = e.pageX;
+        var y = e.pageY;
+
+        if(dragObj == null)
+            return;
+
+        dragObj.style.left = x +"px";
+        dragObj.style.top= y +"px";
+      };
+
+  </script>
 
 <script type="text/javascript">
 /*<![CDATA[*/
