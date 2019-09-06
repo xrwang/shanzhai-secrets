@@ -498,3 +498,13 @@ h1:focus {
     }
 
 }
+
+.residency {
+  float: left;
+  top: 85%;
+  position: fixed;
+  padding: 1em;
+}
+img.residency {
+  width: 100px;
+}
