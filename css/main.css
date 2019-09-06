@@ -371,7 +371,7 @@ h1:focus {
 
 #information-panel-scrolling {
   font-family: 'Exo 2', sans-serif;
-  position: absolute;
+  position: fixed;
   font-size: 1.5rem;
   width: 100%;
   background: black;
@@ -384,7 +384,7 @@ h1:focus {
 #flickering {
   /* background: black; */
   padding: 1em 1em;
-  position: absolute;
+  position: fixed;
   /* border: 1px solid blue; */
   margin-top: 5rem;
   margin-left: 2rem;
@@ -419,9 +419,77 @@ h1:focus {
 
 
 .desc-container {
-  width: 500px;
-  height: 500px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.8rem;
+  color: white;
+  width: 900px;
+  height: 650px;
+  padding: 2em;
+  background:black;
+  overflow: scroll;
+  border: 2px solid var(--neon-text-color);
+  box-shadow: 0px 0px 5rem var(--neon-text-color),
+              inset 0 0 4rem var(--neon-text-color);
+
+
+}
+
+.desc-container .title {
+  font-weight: 700;
 }
 img {
-  width: 80%;
+  width: 60%;
+  display:block;
+  margin: 0 auto;
+}
+
+
+
+
+.glitch {
+    font-family: 'Exo 2', sans-serif;
+    animation: glitch-skew 60s infinite ease-out;
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    position: relative;
+    display: flex;
+    text-align: center;
+    text-transform: uppercase;
+    transform-origin: center top;
+    position: fixed;
+    left: 10%;
+    top: 50%;
+    color: var(--neon-text-color);
+    align-items: center;
+    text-shadow: 0 0 2rem var(--neon-text-color);
+    &__main {
+        color: var(--neon-text-color);
+    }
+
+}
+
+@keyframes glitch-skew {
+    0% {
+        opacity:0;
+        transform: skew(0deg, 0deg);
+    }
+    8% {
+        opacity:1;
+        transform: skew(-50deg, 0deg);
+    }
+    15% {
+        transform: skew(20deg, 0deg);
+        filter: blur(2px);
+    }
+    20% {
+        opacity: 0;
+        transform: skew(0deg, 0deg);
+        filter: blur(0);
+        transform: skew(0deg, 0deg);
+    }
+    100% {
+      opacity:0;
+    }
+
 }
